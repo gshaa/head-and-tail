@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(to right, #4a4ae0 50%, #f1f0f0 50%) fixed;
+}
+
+.container {
+  background-color: #fff;
+  width: 400px;
+  padding: 50px;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  bottom: 50%;
+  left: 50%;
+  box-shadow: 15px 30px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.stats {
+  text-align: right;
+  color: black;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 32px;
+}
+.coin {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 50px auto;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  /* animation: spin-tails 3s forwards; */
+}
+.coin img {
+  width: 200px;
+}
+.heads,
+.tails {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.tails {
+  transform: rotateX(180deg);
+}
+@keyframes spin-tails {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(1980deg);
+  }
+}
+@keyframes spin-heads {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(2160deg);
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  width: 120px;
+  padding: 10px 0;
+  border: 2px solid #4a4ae0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#flip-button {
+  background-color: #4a4ae0;
+  color: #fff;
+}
+#flip-button:hover {
+  opacity: 0.8;
+}
+#flip-button:disabled {
+  background-color: #fff;
+  color: #4a4ae0;
+}
+#reset-button {
+  background-color: #f1f0f0;
+  color: #000000;
+}
+#reset-button:hover {
+  opacity: 0.8;
+}
