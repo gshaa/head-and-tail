@@ -36,7 +36,6 @@ body {
   margin: 50px auto;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  /* animation: spin-tails 3s forwards; */
 }
 .coin img {
   width: 200px;
@@ -87,8 +86,8 @@ button {
   opacity: 0.8;
 }
 #flip-button:disabled {
-  background-color: #fff;
-  color: #4a4ae0;
+  background-color: #f1f0f0;
+  color: #000000;
 }
 #reset-button {
   background-color: #f1f0f0;
