@@ -4,6 +4,7 @@ let coin = document.querySelector(".coin");
 let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 
+let timeoutFlip;
 flipBtn.addEventListener("click", () => {
   let i = Math.floor(Math.random() * 2);
   coin.style.animation = "none";
@@ -18,7 +19,7 @@ flipBtn.addEventListener("click", () => {
     }, 100);
     tails++;
   }
-  setTimeout(updateStats, 3000);
+  timeoutFlip = setTimeout(updateStats, 3000);
   disableButton();
 });
 
@@ -28,7 +29,6 @@ function updateStats() {
 }
 
 let timeoutId;
-
 function disableButton() {
   flipBtn.disabled = true;
   timeoutId = setTimeout(function () {
@@ -42,5 +42,6 @@ resetBtn.addEventListener("click", () => {
   tails = 0;
   updateStats();
   clearTimeout(timeoutId);
+  clearTimeout(timeoutFlip);
   flipBtn.disabled = false;
 });
