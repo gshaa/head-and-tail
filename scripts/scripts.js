@@ -27,9 +27,11 @@ function updateStats() {
   document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
 }
 
+let timeoutId;
+
 function disableButton() {
   flipBtn.disabled = true;
-  setTimeout(function () {
+  timeoutId = setTimeout(function () {
     flipBtn.disabled = false;
   }, 3000);
 }
@@ -39,4 +41,6 @@ resetBtn.addEventListener("click", () => {
   heads = 0;
   tails = 0;
   updateStats();
+  clearTimeout(timeoutId);
+  flipBtn.disabled = false;
 });
